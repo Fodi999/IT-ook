@@ -1,0 +1,47 @@
+.card {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: lightgray no-repeat;
+    background-size: cover;
+}
+
+.card .content {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .content {
+    opacity: 1;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* Container Queries */
+@container (min-width: 200px) {
+    .card {
+        border: 2px solid blue;
+    }
+}
+
+@container (min-width: 300px) {
+    .card {
+        border: 2px solid green;
+    }
+}
+ 

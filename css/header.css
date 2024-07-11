@@ -1,0 +1,50 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Зафиксированный хедер */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Чтобы хедер был поверх всего контента */
+}
+
+header h1 {
+    margin-left: 20px;
+}
+
+.cv-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+}
+
+.cv-button img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.cv-button span {
+    font-size: 16px;
+}
+
+.cv-button:hover {
+    background-color: lightgray;
+}
+
+body {
+    margin-top: 70px; /* Отступ для контента, чтобы он не перекрывался хедером */
+}
+
