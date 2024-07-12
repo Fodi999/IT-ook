@@ -9,6 +9,7 @@ var Portfolio = /** @class */ (function () {
     Portfolio.prototype.init = function () {
         var _this = this;
         window.addEventListener('wheel', function (event) { return _this.onScroll(event); });
+        this.addClickHandlers();
     };
     Portfolio.prototype.onScroll = function (event) {
         var _this = this;
@@ -41,6 +42,17 @@ var Portfolio = /** @class */ (function () {
         this.sections[this.currentSectionIndex].scrollIntoView({
             behavior: 'smooth',
             block: 'start'
+        });
+    };
+    Portfolio.prototype.addClickHandlers = function () {
+        var clickableText = document.querySelectorAll('.clickable');
+        clickableText.forEach(function (element) {
+            element.addEventListener('click', function () {
+                var link = element.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;
+                }
+            });
         });
     };
     return Portfolio;

@@ -10,6 +10,7 @@ class Portfolio {
 
     private init() {
         window.addEventListener('wheel', (event) => this.onScroll(event));
+        this.addClickHandlers();
     }
 
     private onScroll(event: WheelEvent) {
@@ -47,11 +48,30 @@ class Portfolio {
             block: 'start'
         });
     }
+
+    private addClickHandlers() {
+        const clickableText = document.querySelectorAll('.clickable');
+        clickableText.forEach((element) => {
+            element.addEventListener('click', () => {
+                const link = element.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;
+                }
+            });
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     new Portfolio();
 });
+
+
+
+
+
+
+
 
 
 

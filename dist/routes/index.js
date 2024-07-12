@@ -9,4 +9,7 @@ var router = (0, express_1.Router)();
 router.get('/', function (req, res) {
     res.sendFile(path_1.default.join(__dirname, '../../views/index.html'));
 });
+router.get('/about', function (req, res) {
+    res.sendFile(path_1.default.join(__dirname, '../../views/about.html'));
+});
 exports.default = router;

@@ -65,60 +65,87 @@ section p {
     color: #ccc;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+.fullscreen-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: fixed;
+    transition: background 0.8s ease-in-out;
+    color: transparent;
+}
+
+.fullscreen-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    transition: background 0.8s ease-in-out;
+    color: transparent;
+}
+
+.fullscreen-section::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Начальное затемнение */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
 }
 
-header h1 {
-    margin-left: 20px;
+.fullscreen-section:hover::before {
+    opacity: 1;
 }
 
-.cv-button {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 50px;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: black;
-    transition: background-color 0.3s;
-    margin-right: 20px;
+.fullscreen-section:hover {
+    color: white;
 }
 
-.cv-button img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
+.fullscreen-section h1, .fullscreen-section h2, .fullscreen-section p {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
 }
-
-.cv-button span {
+.button {
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.cv-button:hover {
-    background-color: lightgray;
+.button:hover {
+    background-color: #0056b3;
 }
 
-body {
-    margin-top: 70px;
-}
-.large-heading {
-    font-size: 6em; /* Сделать текст крупным */
-    color: #333; /* Цвет текста */
-    margin-bottom: 20px; /* Отступ снизу */
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

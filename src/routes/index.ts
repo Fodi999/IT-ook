@@ -7,4 +7,9 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../views/index.html'));
 });
 
+router.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../views/about.html'));
+});
+
 export default router;
+
